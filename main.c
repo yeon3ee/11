@@ -1,15 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void swap (int *x, int *y) {
-	int temp;
-	temp = *x;
-	*x = *y;
-	*y = temp;
-}
-void main(void) {
-	int a = 3;
-	int b = 5;
-	swap(&a, &b);
-	printf("a:%i, b:%i\n", a, b);
+int main(void){
+	int i=10;
+	char c='a';
+
+   
+    int* iptr = &i;
+    char* cptr = &c;
+    int* iptr2 = iptr;
+
+   	printf("i : %p\n%p (size:%i)\n", iptr, &i, sizeof(iptr));
+	printf("c : %p\n%p (size:%i)\n", cptr, &c, sizeof(cptr));
+	printf("iptr2 : %p, %i\n", iptr2, *iptr2);
+    return 0;
 }
